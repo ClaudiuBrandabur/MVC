@@ -2,9 +2,27 @@
         "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
         "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
-<web-app>
+<web-app version="3.1"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+		                     http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+
     <display-name>Awesome MVC Framework</display-name>
 
     <!--Configurare servleti-->
 
+    <!--<welcome-file-list>-->
+        <!--<welcome-file>/mvc/index.jsp</welcome-file>-->
+    <!--</welcome-file-list>-->
+
+    <servlet>
+        <servlet-name>DispatcherServlet</servlet-name>
+        <servlet-class>ro.teamnet.zth.web.MyDispatcherServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DispatcherServlet</servlet-name>
+        <url-pattern>/mvc/*</url-pattern>
+    </servlet-mapping>
+    
 </web-app>
